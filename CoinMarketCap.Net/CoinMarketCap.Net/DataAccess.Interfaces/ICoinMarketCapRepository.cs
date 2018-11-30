@@ -19,13 +19,13 @@ namespace CoinMarketCap.Net.DataAccess.Interfaces
 
     public interface ICoinMarketCapRepository
     {
-        Task<Metadata> GetMetadata(int id);
+        Task<Dictionary<string, Metadata>> GetMetadata(int id);
 
-        Task<Metadata> GetMetadata(string symbol);
+        Task<Dictionary<string, Metadata>> GetMetadata(string symbol);
 
-        Task<Metadata> GetMetadata(List<int> ids);
+        Task<Dictionary<string, Metadata>> GetMetadata(List<int> ids);
 
-        Task<Metadata> GetMetadata(List<string> symbols);
+        Task<Dictionary<string, Metadata>> GetMetadata(List<string> symbols);
 
         Task<IEnumerable<Map>> GetIDMap(ListingStatus listingStatus);
 

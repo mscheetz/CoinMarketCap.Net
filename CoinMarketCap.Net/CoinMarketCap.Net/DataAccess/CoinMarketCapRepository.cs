@@ -41,31 +41,31 @@ namespace CoinMarketCap.Net.DataAccess
             rest = new RESTRepository();
         }
 
-        public async Task<Metadata> GetMetadata(int id)
+        public async Task<Dictionary<string, Metadata>> GetMetadata(int id)
         {
             var ids = new List<int> { id };
 
             return await OnGetMetadata(ids, new List<string>());
         }
 
-        public async Task<Metadata> GetMetadata(string symbol)
+        public async Task<Dictionary<string, Metadata>> GetMetadata(string symbol)
         {
             var symbols = new List<string> { symbol };
 
             return await OnGetMetadata(new List<int>(), symbols);
         }
 
-        public async Task<Metadata> GetMetadata(List<int> ids)
+        public async Task<Dictionary<string, Metadata>> GetMetadata(List<int> ids)
         {
             return await OnGetMetadata(ids, new List<string>());
         }
 
-        public async Task<Metadata> GetMetadata(List<string> symbols)
+        public async Task<Dictionary<string, Metadata>> GetMetadata(List<string> symbols)
         {
             return await OnGetMetadata(new List<int>(), symbols);
         }
 
-        private async Task<Metadata> OnGetMetadata(List<int> ids, List<string> symbols)
+        private async Task<Dictionary<string, Metadata>> OnGetMetadata(List<int> ids, List<string> symbols)
         {
             var endpoint = "/v1/cryptocurrency/info";
             var properties = new Dictionary<string, object>();
@@ -83,7 +83,7 @@ namespace CoinMarketCap.Net.DataAccess
             if (!string.IsNullOrEmpty(queryString))
                 url += $"?{queryString}";
 
-            var response = await rest.GetApiStream<ResponseWrapper<Metadata>>(url, GetHeaders());
+            var response = await rest.GetApiStream<ResponseWrapper<Dictionary<string, Metadata>>>(url, GetHeaders());
 
             return response.Data;
         }

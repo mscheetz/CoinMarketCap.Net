@@ -29,15 +29,15 @@ namespace CoinMarketCap.Net.Contracts
 
         [DataMember]
         [JsonProperty(PropertyName = "name")]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         [DataMember]
         [JsonProperty(PropertyName = "symbol")]
-        public int Symbol { get; set; }
+        public string Symbol { get; set; }
 
         [DataMember]
         [JsonProperty(PropertyName = "slug")]
-        public int Slug { get; set; }
+        public string Slug { get; set; }
 
         #endregion Properties
     }

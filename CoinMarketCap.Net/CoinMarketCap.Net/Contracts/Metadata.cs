@@ -25,7 +25,7 @@ namespace CoinMarketCap.Net.Contracts
 
         [DataMember]
         [JsonProperty(PropertyName = "logo")]
-        public int Logo { get; set; }
+        public string Logo { get; set; }
 
         [DataMember]
         [JsonProperty(PropertyName = "tags")]

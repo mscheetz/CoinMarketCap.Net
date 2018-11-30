@@ -1,0 +1,40 @@
+﻿// -----------------------------------------------------------------------------
+// <copyright file="Exchange" company="Matt Scheetz">
+//     Copyright (c) Matt Scheetz All Rights Reserved
+// </copyright>
+// <author name="Matt Scheetz" date="11/29/2018 9:24:50 PM" />
+// -----------------------------------------------------------------------------
+
+namespace CoinMarketCap.Net.Contracts
+{
+    using Newtonsoft.Json;
+    #region Usings
+
+    using System;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+
+    #endregion Usings
+
+    [DataContract]
+    [Serializable]
+    public class Exchange
+    {
+        #region Properties
+
+        [DataMember]
+        [JsonProperty(PropertyName = "id")]
+        public int Id { get; set; }
+
+        [DataMember]
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
+        [DataMember]
+        [JsonProperty(PropertyName = "slug")]
+        public string Slug { get; set; }
+
+        #endregion Properties
+    }
+}

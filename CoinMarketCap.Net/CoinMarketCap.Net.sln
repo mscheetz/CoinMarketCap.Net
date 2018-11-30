@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinMarketCap.Net", "CoinMarketCap.Net\CoinMarketCap.Net.csproj", "{17444D43-BAD5-4FD6-BD84-55EA8D3ACBA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{75B92670-C859-4549-9226-E0F969F1E3B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9E110DB3-71E9-4E3D-8F41-F0EE36DA54B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinMarketCap.Net.Tests", "CoinMarketCap.Net.Tests\CoinMarketCap.Net.Tests.csproj", "{96301D11-98E0-4233-BF87-1321F8AA3570}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17444D43-BAD5-4FD6-BD84-55EA8D3ACBA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17444D43-BAD5-4FD6-BD84-55EA8D3ACBA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17444D43-BAD5-4FD6-BD84-55EA8D3ACBA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17444D43-BAD5-4FD6-BD84-55EA8D3ACBA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96301D11-98E0-4233-BF87-1321F8AA3570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96301D11-98E0-4233-BF87-1321F8AA3570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96301D11-98E0-4233-BF87-1321F8AA3570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96301D11-98E0-4233-BF87-1321F8AA3570}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17444D43-BAD5-4FD6-BD84-55EA8D3ACBA4} = {75B92670-C859-4549-9226-E0F969F1E3B9}
+		{96301D11-98E0-4233-BF87-1321F8AA3570} = {9E110DB3-71E9-4E3D-8F41-F0EE36DA54B8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB9AD899-82C2-43C3-96CE-6FAAA6E3AF75}
+	EndGlobalSection
+EndGlobal

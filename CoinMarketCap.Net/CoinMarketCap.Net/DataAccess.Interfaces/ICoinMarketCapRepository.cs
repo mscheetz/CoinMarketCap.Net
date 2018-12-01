@@ -27,9 +27,13 @@ namespace CoinMarketCap.Net.DataAccess.Interfaces
 
         Task<Dictionary<string, Metadata>> GetMetadata(List<string> symbols);
 
+        Task<IEnumerable<Map>> GetIDMap();
+
         Task<IEnumerable<Map>> GetIDMap(ListingStatus listingStatus);
 
         Task<IEnumerable<Map>> GetIDMap(ListingStatus listingStatus, int start = 1, int limit = 5000);
+
+        Task<IEnumerable<Map>> GetIDMap(int start = 1, int limit = 5000);
 
         Task<IEnumerable<Map>> GetIDMap(List<string> symbols);
     }

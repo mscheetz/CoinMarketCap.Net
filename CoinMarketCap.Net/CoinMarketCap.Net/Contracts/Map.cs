@@ -25,7 +25,7 @@ namespace CoinMarketCap.Net.Contracts
 
         [DataMember]
         [JsonProperty(PropertyName = "is_active")]
-        public int IsActive { get; set; }
+        public bool IsActive { get; set; }
 
         [DataMember]
         [JsonProperty(PropertyName = "first_historical_data")]

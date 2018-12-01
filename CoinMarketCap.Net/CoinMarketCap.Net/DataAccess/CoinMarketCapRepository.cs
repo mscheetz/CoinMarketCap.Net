@@ -88,9 +88,21 @@ namespace CoinMarketCap.Net.DataAccess
             return response.Data;
         }
 
+        public async Task<IEnumerable<Map>> GetIDMap()
+        {
+            return await OnGetIDMap(null, 0, 0, new List<string>());
+        }
+
         public async Task<IEnumerable<Map>> GetIDMap(ListingStatus listingStatus)
         {
             return await OnGetIDMap(listingStatus, 0, 0, new List<string>());
+        }
+
+        public async Task<IEnumerable<Map>> GetIDMap(int start = 1, int limit = 5000)
+        {
+            limit = limit > 5000 ? 5000 : limit;
+
+            return await OnGetIDMap(null, start, limit, new List<string>());
         }
 
         public async Task<IEnumerable<Map>> GetIDMap(ListingStatus listingStatus, int start = 1, int limit = 5000)
@@ -102,14 +114,14 @@ namespace CoinMarketCap.Net.DataAccess
 
         public async Task<IEnumerable<Map>> GetIDMap(List<string> symbols)
         {
-            return await OnGetIDMap(ListingStatus.Both, 0, 0, symbols);
+            return await OnGetIDMap(null, 0, 0, symbols);
         }
 
-        private async Task<IEnumerable<Map>> OnGetIDMap(ListingStatus listingStatus, int start, int limit, List<string> symbols)
+        private async Task<IEnumerable<Map>> OnGetIDMap(ListingStatus? listingStatus, int start, int limit, List<string> symbols)
         {
             var endpoint = "/v1/cryptocurrency/map";
             var properties = new Dictionary<string, object>();
-            if (listingStatus != ListingStatus.Both)
+            if (listingStatus != null)
             {
                 properties.Add("listing_status", listingStatus.ToString().ToLower());
             }

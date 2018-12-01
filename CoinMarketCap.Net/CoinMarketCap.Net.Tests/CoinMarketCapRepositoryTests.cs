@@ -1,3 +1,4 @@
+using CoinMarketCap.Net.Contracts;
 using CoinMarketCap.Net.DataAccess;
 using CoinMarketCap.Net.DataAccess.Interfaces;
 using System;
@@ -66,6 +67,52 @@ namespace CoinMarketCap.Net.Tests
             var symbols = new List<string> { "BTC", "ETH" };
 
             var data = repo.GetMetadata(symbols).Result;
+
+            Assert.NotNull(data);
+        }
+
+        [Fact]
+        public void GetIDMap_Test()
+        {
+            var data = repo.GetIDMap().Result;
+
+            Assert.NotNull(data);
+        }
+
+        [Fact]
+        public void GetIDMapNumbers_Test()
+        {
+            var data = repo.GetIDMap(50, 20).Result;
+
+            Assert.NotNull(data);
+        }
+
+        [Fact]
+        public void GetIDMapListingStatus_Test()
+        {
+            var status = ListingStatus.Active;
+
+            var data = repo.GetIDMap(status).Result;
+
+            Assert.NotNull(data);
+        }
+
+        [Fact]
+        public void GetIDMapSymbols_Test()
+        {
+            var symbols = new List<string> { "BTC,ETH,XLM" };
+
+            var data = repo.GetIDMap(symbols).Result;
+
+            Assert.NotNull(data);
+        }
+
+        [Fact]
+        public void GetIDMapComplex_Test()
+        {
+            var status = ListingStatus.Active;
+
+            var data = repo.GetIDMap(status, 50, 20).Result;
 
             Assert.NotNull(data);
         }

@@ -1,7 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Matt Scheetz</Authors>
+    <PackageProjectUrl>https://github.com/mscheetz/CoinMarketCap.Net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mscheetz/CoinMarketCap.Net</RepositoryUrl>
+    <Copyright>2018 Matt Scheetz</Copyright>
+    <Description>Api library for accessing the CoinMarketCap.com Api built on .Net Standard. Currently only offering MetaData and Map data endpoints</Description>
+    <PackageReleaseNotes>Currently only offering MetaData and Map data endpoints</PackageReleaseNotes>
+    <PackageTags>bitcoin cryptocurrency trading api .net standard</PackageTags>
+    <IsPackable>true</IsPackable>
+    <Version>0.0.1</Version>
+    <PackageLicenseUrl>https://github.com/mscheetz/CoinMarketCap.Net/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageId>CoinMarketCap.Net</PackageId>
+    <Product>CoinMarketCap.Net</Product>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\CoinMarketCap.Net.xml</DocumentationFile>
+    <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

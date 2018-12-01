@@ -15,9 +15,11 @@ namespace CoinMarketCap.Net.Contracts
 
     #endregion Usings
 
+    /// <summary>
+    /// Represents the listing status of a cryptocurrency
+    /// </summary>
     public enum ListingStatus
     {
-        Both,
         Active,
         Inactive
     }

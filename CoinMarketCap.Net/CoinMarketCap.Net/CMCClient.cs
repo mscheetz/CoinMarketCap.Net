@@ -36,6 +36,102 @@ namespace CoinMarketCap.Net
         /// </summary>
         /// <param name="id">Id of currency</param>
         /// <returns>Dictionary of currency metadatas</returns>
+        public Dictionary<string, Metadata> GetMetadata(int id)
+        {
+            return _repo.GetMetadata(id).Result;
+        }
+
+        /// <summary>
+        /// Returns all static metadata for one or more cryptocurrencies 
+        /// including name, symbol, logo, and its various registered URLs
+        /// </summary>
+        /// <param name="symbol">Symbol of currency</param>
+        /// <returns>Dictionary of currency metadatas</returns>
+        public Dictionary<string, Metadata> GetMetadata(string symbol)
+        {
+            return _repo.GetMetadata(symbol).Result;
+        }
+
+        /// <summary>
+        /// Returns all static metadata for one or more cryptocurrencies 
+        /// including name, symbol, logo, and its various registered URLs
+        /// </summary>
+        /// <param name="ids">Collection of currency ids</param>
+        /// <returns>Dictionary of currency metadatas</returns>
+        public Dictionary<string, Metadata> GetMetadata(List<int> ids)
+        {
+            return _repo.GetMetadata(ids).Result;
+        }
+
+        /// <summary>
+        /// Returns all static metadata for one or more cryptocurrencies 
+        /// including name, symbol, logo, and its various registered URLs
+        /// </summary>
+        /// <param name="symbols">Collection of currency symbols</param>
+        /// <returns>Dictionary of currency metadatas</returns>
+        public Dictionary<string, Metadata> GetMetadata(List<string> symbols)
+        {
+            return _repo.GetMetadata(symbols).Result;
+        }
+
+        /// <summary>
+        /// Returns a list of all cryptocurrencies by CoinMarketCap ID
+        /// </summary>
+        /// <returns>Collection of cryptocurrency Maps</returns>
+        public IEnumerable<Map> GetIDMap()
+        {
+            return _repo.GetIDMap().Result;
+        }
+
+        /// <summary>
+        /// Returns a list of all cryptocurrencies by CoinMarketCap ID
+        /// </summary>
+        /// <param name="listingStatus">Listing status</param>
+        /// <returns>Collection of cryptocurrency Maps</returns>
+        public IEnumerable<Map> GetIDMap(ListingStatus listingStatus)
+        {
+            return _repo.GetIDMap(listingStatus).Result;
+        }
+
+        /// <summary>
+        /// Returns a list of all cryptocurrencies by CoinMarketCap ID
+        /// </summary>
+        /// <param name="listingStatus">Listing status</param>
+        /// <param name="start">Starting record number</param>
+        /// <param name="limit">Number of records per page</param>
+        /// <returns>Collection of cryptocurrency Maps</returns>
+        public IEnumerable<Map> GetIDMap(ListingStatus listingStatus, int start = 1, int limit = 5000)
+        {
+            return _repo.GetIDMap(listingStatus, start, limit).Result;
+        }
+
+        /// <summary>
+        /// Returns a list of all cryptocurrencies by CoinMarketCap ID
+        /// </summary>
+        /// <param name="start">Starting record number</param>
+        /// <param name="limit">Number of records per page</param>
+        /// <returns>Collection of cryptocurrency Maps</returns>
+        public IEnumerable<Map> GetIDMap(int start = 1, int limit = 5000)
+        {
+            return _repo.GetIDMap(start, limit).Result;
+        }
+
+        /// <summary>
+        /// Returns a list of all cryptocurrencies by CoinMarketCap ID
+        /// </summary>
+        /// <param name="symbols">Collection of symbols to find</param>
+        /// <returns>Collection of cryptocurrency Maps</returns>
+        public IEnumerable<Map> GetIDMap(List<string> symbols)
+        {
+            return _repo.GetIDMap(symbols).Result;
+        }
+
+        /// <summary>
+        /// Returns all static metadata for one or more cryptocurrencies 
+        /// including name, symbol, logo, and its various registered URLs
+        /// </summary>
+        /// <param name="id">Id of currency</param>
+        /// <returns>Dictionary of currency metadatas</returns>
         public async Task<Dictionary<string, Metadata>> GetMetadataAsync(int id)
         {
             return await _repo.GetMetadata(id);
